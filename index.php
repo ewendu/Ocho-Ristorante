@@ -30,3 +30,5 @@ require_once 'library/InterceptingFilter.interface.php';
 
 $microKernel = new MicroKernel();
 $microKernel->bootstrap()->run(new FrontController());
+
+

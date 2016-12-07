@@ -6,27 +6,25 @@
     box-sizing: border-box;
 }
 
-a
-{
-    color : #1E593B;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.25s;
-}
-a:hover
-{
-    color: #339966;
-}
-
 body
 {
-    /* structure */
-    border-top: 1.5em solid #EF4036;
-    padding: 1em 5em;
-
-    /* presentation */
-    font-family: 'Karla', sans-serif;
+   
 }
+
+.nav-wrapper a
+{
+    color :#b71c1c;
+    font-size: 1.2em;
+}
+.nav-wrapper ul
+{
+   margin-left:35%;
+}
+.nav-wrapper button
+{
+    margin:.3em .5%;
+}
+
 
 fieldset
 {
@@ -45,53 +43,21 @@ fieldset legend
     padding: 0 0.5em;
 
     /* presentation */
-    color: #1E593B;
     font-weight: bold;
 }
 
-footer
-{
-    /* structure */
-    margin-top: 3em;
 
-    /* presentation */
-    text-align: center;
-}
-footer .fa-heart
-{
-    color: #EF4036;
-}
 
-h1
-{
-    color: #EF4036;
-    font-family: 'Oleo Script Swash Caps', cursive;
-    letter-spacing: 0.15em;
-    text-align: center;
-}
-h1 a,
-h1 a:hover
-{
-    color: inherit;
-}
+
+
 h1 img
 {
-    margin-right: 0.5em;
-    vertical-align: middle;
-}
-
-h2
-{
-    /* structure */
-    margin: 1.5em 0;
-
-    /* presentation */
-    color: #1E593B;
+    margin-right:2%;
 }
 
 html
 {
-    background: url('../images/background.png') repeat;
+    /*background: url('../images/background.png') repeat;*/
     overflow-y: scroll;
 }
 
@@ -266,4 +232,8 @@ html
 .invoice .city
 {
     text-transform: uppercase;
+}
+footer a
+{
+    color :#b71c1c;
 }

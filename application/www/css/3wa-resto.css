@@ -11,7 +11,7 @@ body
    
 }
 
-.nav-wrapper a
+.nav-wrapper li a
 {
     color :#b71c1c;
     font-size: 1.2em;
@@ -20,7 +20,7 @@ body
 {
    margin-left:35%;
 }*/
-.nav-wrapper button
+.nav-wrapper > a
 {
     margin:.3em .5%;
 }
@@ -77,7 +77,10 @@ html
     overflow-y: scroll;
 }
 
-
+.clear
+{
+    clear: both;
+}
 /*
  * Classes génériques
  */

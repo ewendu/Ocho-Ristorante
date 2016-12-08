@@ -7,7 +7,7 @@
     <title>Ocho Ristorante</title>
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     
 
@@ -19,7 +19,10 @@
     
 
     <!-- Librairie jQuery -->
-    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script
+			  src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     
 
@@ -49,7 +52,7 @@
             <li><a href="#">CONTACT</a></li>
             
           </ul>
-          <a href="index/user" class="red accent-4 right waves-effect waves-light btn-large">SIGN UP</a>
+          <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">SIGN UP</a>
           <a href="#" class="teal accent-4 right waves-effect waves-light btn-large">LOG IN</a>
           <!--<ul id="mobile-demo" class="side-nav">
             <li><a href="#">HOME</a></li>

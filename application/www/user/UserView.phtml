@@ -1,1 +1,67 @@
-<h3 class="red-text text-darken-4 center-align">- Create a new account -</h3>
+<h3 class="teal-text text-darken-3 center-align"><i class="fa fa-user-plus" aria-hidden="true"></i>
+ Create a new account </h3>
+<form action="" method="">
+    <p class="center-align">Identity and address :</p>
+    <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+          <input id="date" type="date" class="datepicker">
+          <label for="date">Birthdate :</label>
+      </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="adress" type="text" class="validate">
+          <label for="adress">Address</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <input id="city" type="text" class="validate">
+          <label for="city">City</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="zip" type="text" class="validate">
+          <label for="zip">Zip Code</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="phone" type="tel" class="validate">
+          <label for="phone">Phone number</label>
+        </div>
+      </div>
+      <p class="center-align">Authentification informations :</p>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="center-align">
+          <input  class="waves-effect waves-light btn" type="submit" value="Submit"/>
+          <a href="index" class="waves-effect waves-light btn">Cancel</a>
+      </div>
+    
+</form>
+<script>
+     $(document).ready(function() {
+    $('select').material_select();
+  });
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 200 // Creates a dropdown of 15 years to control year
+  });
+</script>

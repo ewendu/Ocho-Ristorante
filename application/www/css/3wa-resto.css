@@ -129,130 +129,29 @@ html
 }
 
 
-/*
- * CSS de l'interface utilisateur
- */
-.user-interface
-{
-    margin-bottom: 3em;
-    margin-top: 3em;
-}
 
-.user-interface .welcome
-{
-    display: inline-block;
-    margin: 0 1em;
-}
-.user-interface .welcome strong
-{
-    color: #EF4036;
-}
-
-
-/*
- * CSS des tableaux listant des aliments
- */
-.meal-list img
-{
-    border-radius: 4px;
-    opacity: 0.8;
-    transition: opacity 0.25s;
-    vertical-align: middle;
-}
-.meal-list img + em
-{
-    margin-left: 1em;
-}
-.meal-list p
-{
-    text-align: justify;
-}
-.meal-list tr:hover img
-{
-    opacity: 1;
-}
 
 /*
  * CSS de la page d'accueil
  */
-.notice
-{
-    /* structure */
-    margin-bottom: 2em;
-
-    /* presentation */
-    background-color: rgba(208, 255, 255, 0.33);
-    border: 1px solid #339966;
-    border-radius: 6px;
-    color: #339966;
-    font-size: 1.33em;
-    text-align: center;
-}
 
 
-/*
- * CSS de la page de commande
- */
-.basket-empty
-{
-    color: #339966;
-    font-size: 1.25em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.meal-details
-{
-    /* structure */
-    margin-right: 3em;
-    margin-top: 1em;
-    padding: 0.75em;
-
-    /* presentation */
-    background-color: #D0FFFF;
-    border-radius: 4px;
-    border: 1px solid #1E593B;
-}
-.meal-details:after
-{
-    clear: left;
-    content: ' ';
-    display: block;
-}
-.meal-details img
-{
-    float: left;
-    margin-right: 1em;
-}
-.meal-details p
-{
-    /* structure */
-    margin-top: 0;
-
-    /* presentation */
-    text-align: justify;
-}
 
 
-/*
- * CSS de la page de récapitulatif de la commande
- */
-.invoice
-{
-    /* structure */
-    margin: 2em 0 1em 50%;
-    padding: 0 1em;
-
-    /* presentation */
-    background-color: #D0FFFF;
-    border-radius: 4px;
-    border: 1px solid #1E593B;
-}
-.invoice .city
-{
-    text-transform: uppercase;
-}
 footer a
 {
     color :#b71c1c;
 }
+
+/*******
+******** FORMULAIRE 
+***********/
+
+main form p 
+{
+    padding: 2%;
+    border-bottom:2px dashed #00695c;
+}
+.input-field label {
+     color: #1E593B;
+   }

@@ -59,7 +59,10 @@ fieldset legend
     font-weight: bold;
 }
 
-
+.limitsize
+{
+    width: 50%;
+}
 
 
 

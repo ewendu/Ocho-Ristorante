@@ -24,8 +24,21 @@ body
 {
     margin:.3em .5%;
 }
-
-
+main h4
+{
+    margin-top: 5%;
+    padding-bottom: 5%;
+    border-bottom: 2px solid #b71c1c;
+}
+main span
+{
+    font-size: 2em;
+    color :#b71c1c ;
+}
+main div img
+{
+    max-width: 100%!important;
+}
 fieldset
 {
     /* structure */

@@ -1,12 +1,25 @@
 <!-- Message de notification -->
 
 <!-- Code HTML à écrire -->
+<h4 class="center-align red-text text-darken-4">Check out our Card ! </h4>
+<?php foreach($meals as $meal): ?>
+  <div class="col s12 m7">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img alt='<?=htmlspecialchars($meal['Name'])?>' src="<?= $wwwUrl ?>/images/meals/<?= htmlspecialchars($meal['Photo']) ?>">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+            <h5><?= htmlspecialchars($meal['Name']) ?></h5>
+          <p><?= htmlspecialchars($meal['Description']) ?></p>
+        </div>
+        <div class="card-action">
+          <a class="right" href="#"> <span><?= intval($meal['SalePrice']) ?>,00 $</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+ <?php endforeach; ?>
 
 
-<!-- Liste des aliments -->
-<table class="generic-table meal-list">
-    <caption></caption>
-    <tbody>
-        <!-- Code HTML à écrire -->
-    </tbody>
-</table>
+

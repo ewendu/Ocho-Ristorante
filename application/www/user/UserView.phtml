@@ -1,52 +1,53 @@
 <h3 class="teal-text text-darken-3 center-align"><i class="fa fa-user-plus" aria-hidden="true"></i>
  Create a new account </h3>
-<form action="" method="">
+<form action="<?= $requestUrl ?>/user" method="POST">
     <p class="center-align">Identity and address :</p>
     <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
+          <input id="first_name" type="text" class="validate" name="firstname">
           <label for="first_name">First Name</label>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
+          <input id="last_name" type="text" class="validate" name="lastname">
           <label for="last_name">Last Name</label>
         </div>
       </div>
       <div class="input-field col s12">
-          <input id="date" type="date" class="datepicker">
-          <label for="date">Birthdate :</label>
+          <small>Birthdate :</small>
+          <input id="date" type="date" class="datepicker" name="birthdate">
+          
       </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="adress" type="text" class="validate">
-          <label for="adress">Address</label>
+          <input id="address" type="text" class="validate" name="address">
+          <label for="address">Address</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s4">
-          <input id="city" type="text" class="validate">
+          <input id="city" type="text" class="validate" name="city">
           <label for="city">City</label>
         </div>
         <div class="input-field col s4">
-          <input id="zip" type="text" class="validate">
+          <input id="zip" type="text" class="validate" name="zip">
           <label for="zip">Zip Code</label>
         </div>
         <div class="input-field col s4">
-          <input id="phone" type="tel" class="validate">
+          <input id="phone" type="tel" class="validate" name="phone">
           <label for="phone">Phone number</label>
         </div>
       </div>
       <p class="center-align">Authentification informations :</p>
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
+          <input id="email" type="email" class="validate" name="mail">
           <label for="email">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" class="validate" name="password">
           <label for="password">Password</label>
         </div>
       </div>
@@ -57,11 +58,11 @@
     
 </form>
 <script>
-     $(document).ready(function() {
-    $('select').material_select();
+  $(document).ready(function() {
+  $('select').material_select();
   });
   $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 200 // Creates a dropdown of 15 years to control year
+  selectMonths: true, // Creates a dropdown to control month
+  selectYears: 200 // Creates a dropdown of 15 years to control year
   });
 </script>

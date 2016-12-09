@@ -7,9 +7,9 @@ class UserModel
         $sql='
                 INSERT INTO 
                 User
-                (FirstName, LastName, Email, Password, BirthDate, Address, City, ZipCode, Country, Phone, CreationTimestamp)
+                (FirstName, LastName, BirthDate, Address, City, ZipCode, Phone, Email, Password, CreationTimestamp)
                 VALUES
-                    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW());
+                    (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW());
         ';
         $database = new Database();
         $database->executeSql($sql,$values);

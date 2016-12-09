@@ -53,7 +53,7 @@
             
           </ul>
           <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">SIGN UP</a>
-          <a href="<?= $requestUrl ?>/user/login" class="teal accent-4 right waves-effect waves-light btn-large">LOG IN</a>
+          <a href="<?= $requestUrl ?>/user/login" class="teal darken-3 right waves-effect waves-light btn-large">LOG IN</a>
           <ul id="mobile-demo" class="side-nav">
             <li><a href="#">HOME</a></li>
             <li><a href="#">MENU</a></li>
@@ -137,6 +137,11 @@ $(".sticky").addClass('smaller');
 }); }); }); }); 
 //$('#textarea1').val('Your message');
 $('#textarea1').trigger('autoresize');
+$('select').material_select();
+$('.datepicker').pickadate({
+selectMonths: true, // Creates a dropdown to control month
+selectYears: 200 // Creates a dropdown of 15 years to control year
+});
 </script>
 <script src="<?= $wwwUrl ?>/js/main.js"></script>
 

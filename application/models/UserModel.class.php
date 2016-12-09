@@ -2,6 +2,8 @@
 
 class UserModel
 {
+    
+    // Method used when a user want to sign up 
     function signUp (
         $firstName,
         $lastName,
@@ -41,8 +43,8 @@ class UserModel
                 VALUES
                     (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW());
                     ';
-            $database2 = new Database();
-            $database2->executeSql($sql,[
+            $database = new Database();
+            $database->executeSql($sql,[
                                         $firstName,
                                         $lastName,
                                         $birthDate,
@@ -55,7 +57,30 @@ class UserModel
                                         ]
                                 );
     }
+    
+    // Method when the user want to log in 
+    
+    function findWithEmailPassword($email,$password)
+    {
+        $database = new Database();
+        $sql='
+                SELECT Email, Password
+                FROM User
+                WHERE Email = ? 
+            ';
+        $userinfo = $database->queryOne($sql, [$email]);
+        if($userinfo['Email']== $email && $userinfo['Password']== $password)
+        {
+           
+        }
+        else
+        {
+            throw new Exception('Wrong password or email adress !');
+        }
         
+    }
+    
+    
         
         
 }

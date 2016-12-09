@@ -1,24 +1,36 @@
 <section>
-    <h3 class="center-align teal-text text-darken-3">Log In</h3>
+    <?php if($showonfail==''): ?>
+    <h3 class="center-align teal-text text-darken-3"><i class="fa fa-unlock-alt" aria-hidden="true"></i>
+Log In</h3>
     <form action="<?= $requestUrl ?>/user/login" method="POST">
         <fieldset>
+            <p class="center-align">Authentication informations</p>
             <div class="row">
                 <div class="input-field col s12">
                     <input id="email" type="email" class"validate" name="email" /> 
-                    <label for="email">Email</label>
+                    <label for="email"  data-error="wrong" data-success="right">Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                   <input id="password" type="password" class="validate" name="password"/>
-                  <label for="password">Password</label>
+                  <label for="password" data-error="wrong" data-success="right">Password</label>
                 </div>
             </div>
         </fieldset>
+        
         <div class="center-align">
             <button class="center-align teal darken-3 btn waves-effect waves-light" type="submit">Log In</button>
+            <a href="<?= $requestUrl ?>" class="center-align teal darken-3 btn waves-effect waves-light">Cancel</a>
         </div>
     </form>
+    <?php else : ?>
+    <div class="center-align red-text text-darken-4">
+            <h4><strong><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+<?= $showonfail ?></strong></h4>
+    </div>
+    <?php endif; ?>
+    
 </section>
     
     

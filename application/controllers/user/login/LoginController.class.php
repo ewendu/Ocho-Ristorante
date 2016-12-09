@@ -14,7 +14,7 @@ class LoginController
             $usermodel = new UserModel();
             $usermodel->findWithEmailPassword(  $formFields['email'], 
                                             $formFields['password']);
-            return ['showonfail'=> 'You successfully loged in ! '];
+            return ['showonfail'=> 'You successfully logged in ! '];
         }
         catch(Exception $e)
         {

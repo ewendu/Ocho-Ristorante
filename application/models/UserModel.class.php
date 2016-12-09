@@ -64,20 +64,23 @@ class UserModel
     {
         $database = new Database();
         $sql='
-                SELECT Email, Password
+                SELECT Id, LastName, FirstName, Email, Password
                 FROM User
                 WHERE Email = ? 
             ';
         $userinfo = $database->queryOne($sql, [$email]);
-        if($userinfo['Email']== $email && $userinfo['Password']== $password)
+        if(empty($userinfo) || $this->verifyPassword($password, $userinfo['Password']) == false)
         {
-           
+           throw new Exception('Wrong password or email adress !');
         }
-        else
-        {
-            throw new Exception('Wrong password or email adress !');
-        }
+        return $userinfo;
         
+    }
+    
+    
+    private function verifyPassword($password, $bddPassword)
+    {
+        return  $password == $bddPassword;
     }
     
     

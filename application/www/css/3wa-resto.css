@@ -152,7 +152,17 @@ main form p
     padding: 2%;
     border-bottom:2px dashed #00695c;
 }
-.input-field label {
-     color: #1E593B;
-   }
-   
+.input-field label 
+{
+     color: #b71c1c;
+}
+
+.input-field input[type=text]:focus + label , .input-field input[type=email]:focus + label, .input-field input[type=tel]:focus + label, .input-field input[type=password]:focus + label
+{
+     color: #b71c1c;
+}
+.input-field input[type=text]:focus , .input-field input[type=email]:focus, .input-field input[type=tel]:focus,  .input-field input[type=password]:focus
+{
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}

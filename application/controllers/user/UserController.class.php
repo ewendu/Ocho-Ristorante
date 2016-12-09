@@ -15,7 +15,7 @@ class UserController
     	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
     	 */
     	 
-    	 var_dump($formFields);
+    	 
     	 $values = [
     	        $formFields['firstname'],
     	        $formFields['lastname'],
@@ -27,7 +27,7 @@ class UserController
     	        $formFields['mail'], 
     	        $formFields['password']
     	            ];
-    	var_dump($values);
+    	
     	$usermodel = new UserModel();
     	$usermodel->signUp($values);
     } 

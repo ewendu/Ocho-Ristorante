@@ -1,5 +1,7 @@
+<section>
 <h3 class="teal-text text-darken-3 center-align"><i class="fa fa-user-plus" aria-hidden="true"></i>
  Create a new account </h3>
+ 
 <form action="<?= $requestUrl ?>/user" method="POST">
     <p class="center-align">Identity and address :</p>
     <div class="row">
@@ -38,6 +40,9 @@
           <label for="phone">Phone number</label>
         </div>
       </div>
+      <?php if(isset($showonfail)): ?>
+        <h5 class="center-align red-text text-darken-4"><strong><?= $showonfail ?></strong></h5>
+      <?php endif; ?>
       <p class="center-align">Authentification informations :</p>
       <div class="row">
         <div class="input-field col s12">
@@ -57,6 +62,7 @@
       </div>
     
 </form>
+</section>
 <script>
   $(document).ready(function() {
   $('select').material_select();

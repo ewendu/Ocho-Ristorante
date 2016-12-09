@@ -97,7 +97,7 @@ class Http
 			$url = "/$url";
 		}
 
-		header('Location: http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['SCRIPT_NAME'].$url);
+		header('Location: https://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['SCRIPT_NAME'].$url);
 		exit();
 	}
 

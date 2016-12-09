@@ -7,28 +7,29 @@ class UserController
         // Method called when it's a get request 
     }
     public function httpPostMethod(Http $http, array $formFields)
-    {
-    	/*
-    	 * Méthode appelée en cas de requête HTTP POST
-    	 *
-    	 * L'argument $http est un objet permettant de faire des redirections etc.
-    	 * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
-    	 */
-    	 
-    	 
-    	 $values = [
-    	        $formFields['firstname'],
-    	        $formFields['lastname'],
-    	        $formFields['birthdate'], 
-    	        $formFields['address'], 
-    	        $formFields['city'], 
-    	        $formFields['zip'], 
-    	        $formFields['phone'], 
-    	        $formFields['mail'], 
-    	        $formFields['password']
-    	            ];
+    {   // Inserting into database with signUp() method of UserModel object
     	
-    	$usermodel = new UserModel();
-    	$usermodel->signUp($values);
+    	try
+    	{
+    	    $usermodel = new UserModel();
+        	$usermodel->signUp(
+        	        $formFields['firstname'],
+        	        $formFields['lastname'],
+        	        $formFields['birthdate'], 
+        	        $formFields['address'], 
+        	        $formFields['city'], 
+        	        $formFields['zip'], 
+        	        $formFields['phone'], 
+        	        $formFields['mail'], 
+        	        $formFields['password']);
+        	        
+        	        $http->redirectTo('/');
+    	}
+    	catch (Exception $e)
+    	{
+    	    return ['showonfail'=> $e->getMessage()];
+    	}
+    	// Redirect to homepage
+    	
     } 
 }

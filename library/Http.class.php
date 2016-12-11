@@ -97,8 +97,23 @@ class Http
 			$url = "/$url";
 		}
 
-		header('Location: https://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['SCRIPT_NAME'].$url);
+		header('Location: '.$this->getServerProtocol().'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['SCRIPT_NAME'].$url);
 		exit();
+	}
+	
+	public function getServerProtocol()
+	{
+		if(    
+		    (! empty($_SERVER['REQUEST_SCHEME']) && $_SERVER['REQUEST_SCHEME'] == 'https') 
+		 || (! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') 
+		 || (! empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443') ) 
+		{
+            return 'https';
+        } 
+        else 
+        {
+            return 'http';
+        }
 	}
 
 	public function sendJsonResponse($data)

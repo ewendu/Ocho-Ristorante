@@ -1,0 +1,23 @@
+<?php if(!isset($showonfail)): ?>
+<h4 class="center-align red-text text-darken-4"><?= htmlspecialchars($categoryItems[0]['CatName']) ?> </h4>
+<?php foreach($categoryItems as $meal): ?>
+  <div class="col s12 m7">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img alt='<?=htmlspecialchars($meal['MealName'])?>' src="<?= $wwwUrl ?>/images/meals/<?= htmlspecialchars($meal['Photo']) ?>">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+            <h5><?= htmlspecialchars($meal['MealName']) ?></h5>
+          <p><?= htmlspecialchars($meal['Description']) ?></p>
+        </div>
+        <div class="card-action">
+          <a class="right" href="#"> <span><?= intval($meal['SalePrice']) ?>,00 $</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+ <?php endforeach; ?>
+ <?php else : ?>
+ <h1 class="center-align red-text text-darken-4"><?= $showonfail ?></h1>
+ <?php endif; ?>

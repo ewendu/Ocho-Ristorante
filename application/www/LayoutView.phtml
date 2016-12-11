@@ -12,11 +12,7 @@
     
 
     <!-- Feuilles de styles de l'application -->
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/3wa-resto.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-button.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-table.css">
-    
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/custom.css">
 
     <!-- Librairie jQuery -->
     <script
@@ -38,35 +34,42 @@
             <img src="<?= $wwwUrl ?>/images/logoR.png" height="63" width="57" alt="3WA Restaurant">Ocho  Ristorante 
         </a>
     </h1>
-    <!-- Interface utilisateur -->
+    
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="<?= $requestUrl ?>/category?id=1">ENTRIES</a></li>
+      <li><a href="<?= $requestUrl ?>/category?id=4">MEALS</a></li>
+      <li><a href="<?= $requestUrl ?>/category?id=2">DESSERTS</a></li>
+      <li><a href="<?= $requestUrl ?>/category?id=3">DRINKS</a></li>
+    </ul>
+    <!-- User panel -->
     <nav class="grey lighten-2 sticky">
         <div class="row">
         <div class="nav-wrapper">
           <a href="#" class="brand-logo center"></a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="center hide-on-med-and-down container">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">MENU</a></li>
-            <li><a href="#">RESERVATION</a></li>
+            <li><a href="<?= $requestUrl ?>">HOME</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown2">ORDER BY CATEGORIES<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="#">ORDER NOW</a></li>
             <li><a href="#">CONTACT</a></li>
+            
+            
             
           </ul>
           <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">SIGN UP</a>
           <a href="<?= $requestUrl ?>/user/login" class="teal darken-3 right waves-effect waves-light btn-large">LOG IN</a>
+          
+          
           <ul id="mobile-demo" class="side-nav">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">MENU</a></li>
-            <li><a href="#">RESERVATION</a></li>
+            <li><a href="<?= $requestUrl ?>">HOME</a></li>
             <li><a href="#">ORDER NOW</a></li>
             <li><a href="#">CONTACT</a></li>
+           
           </ul>
         </div>
         </div>
     </nav>
-    
-    
-  </nav>
+  
 </header>
 
 
@@ -124,20 +127,19 @@
 <!-- Code principal JavaScript de l'application -->
 <script type="text/javascript">
 $(document).ready(function(){
-$('.carousel').carousel();});
+$('.carousel').carousel();
+$(".dropdown-button").dropdown();
 $(".button-collapse").sideNav();	
-jQuery(function($){
-$(document).ready(function(){
-$(function(){
 $(window).scroll(function(){
 var scroll = $(window).scrollTop();
-if (scroll >= 280){
+if (scroll >= 200){
 $(".sticky").addClass('smaller');
-} else { $(".sticky").removeClass("smaller");} 
-}); }); }); }); 
-//$('#textarea1').val('Your message');
+} 
+else { $(".sticky").removeClass("smaller");} 
+}); 
 $('#textarea1').trigger('autoresize');
 $('select').material_select();
+});
 $('.datepicker').pickadate({
 selectMonths: true, // Creates a dropdown to control month
 selectYears: 200 // Creates a dropdown of 15 years to control year

@@ -2,19 +2,64 @@
     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         Order now !
 </h4>
-<fieldset>
-    <h5 class="center-align indigo-text">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-         Add Food
-    </h5>
+
+   
     <form action="<?= $requestUrl ?>/order" method="POST">
-        
-        
-        
-        
-        
+        <fieldset>
+         <h5 class="center-align indigo-text">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+             Add Products
+        </h5>
+        <div class="input-field col s12">
+            <select>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <label>Name </label>
+        </div>
+        <!-- Here add details on food -->
+        <div class="input-field col s6">
+            <input type="text" name="quantity" id="quantity"/>
+            <label for="quantity">Quantity</label>
+        </div>
+        <div class="center-align">
+            <button type="button" class="indigo waves-effect waves-light btn">Add</button>
+        </div>
+        </fieldset>
+        <fieldset>
+             <h5 class="center-align indigo-text">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+             Your Order
+            </h5>
+            <!-- Add foreach here -->
+            <div class="row">
+                <div class="col s4">
+                    
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+                
+                
+            </div>
+            
+            
+            
+            
+        </fieldset>
+        <div class="center-align">
+            <button type="submit" class="indigo waves-effect waves-light btn">CONFIRM ORDER</button>
+            <a href="<?= $requestUrl ?>" class="red darken-4 waves-effect waves-light btn">Cancel</a>
+        </div>
     </form>
     
     
-</fieldset>
+
 

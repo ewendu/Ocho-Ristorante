@@ -13,13 +13,22 @@ class LoginController
 		{
     	   $userModel = new UserModel();
     	   
-    	    /*$user      = $userModel->findWithEmailPassword
+    	    $user      = $userModel->findWithEmailPassword
                 (
                     $formFields['email'],
                     $formFields['password']
                 );
-             */   
-            return ['showonfail' => 'You successfully connected !'];
+                
+                // Session creation 
+            $userSession = new UserSession();
+            $userSession->create(
+            					$user['Id'], 
+            					$user['FirstName'],
+            					$user['LastName'],
+            					$user['Email']
+            					);
+            				
+            $http->redirectTo('/');
 		}
 		catch(Exception $e)
 		{

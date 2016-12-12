@@ -35,6 +35,15 @@
         </a>
     </h1>
     <!-- Interface utilisateur -->
+    
+    
+    
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="<?= $requestUrl ?>/category?id=1">ENTRIES</a></li>
+      <li><a href="<?= $requestUrl ?>/category?id=4">MEALS</a></li>
+      <li><a href="<?= $requestUrl ?>/category?id=2">DESSERTS</a></li>
+      <li><a href="<?= $requestUrl ?>/category?id=3">DRINKS</a></li>
+    </ul>
     <nav class="grey lighten-2 sticky">
         <div class="row">
         <div class="nav-wrapper">
@@ -42,8 +51,8 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="center hide-on-med-and-down container">
             <li><a href="#">HOME</a></li>
-            <li><a href="#">MENU</a></li>
-            <li><a href="#">RESERVATION</a></li>
+             <li><a class="dropdown-button" href="#!" data-activates="dropdown1">ORDER BY CATEGORYS<i class="material-icons right">arrow_drop_down</i></a></li>
+            
             <li><a href="#">ORDER NOW</a></li>
             <li><a href="#">CONTACT</a></li>
             
@@ -52,8 +61,8 @@
           <a href="<?= $requestUrl ?>/user/login" class="teal darken-3 right waves-effect waves-light btn-large">LOG IN</a>
           <ul id="mobile-demo" class="side-nav">
             <li><a href="#">HOME</a></li>
-            <li><a href="#">MENU</a></li>
-            <li><a href="#">RESERVATION</a></li>
+            
+            
             <li><a href="#">ORDER NOW</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>

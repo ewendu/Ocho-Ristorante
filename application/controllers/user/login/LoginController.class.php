@@ -11,13 +11,14 @@ class LoginController
 	{
 	    try
 		{
-    	    $userModel = new UserModel();
-    	    $user      = $userModel->findWithEmailPassword
+    	   $userModel = new UserModel();
+    	   
+    	    /*$user      = $userModel->findWithEmailPassword
                 (
                     $formFields['email'],
                     $formFields['password']
                 );
-                
+             */   
             return ['showonfail' => 'You successfully connected !'];
 		}
 		catch(Exception $e)

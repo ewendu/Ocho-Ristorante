@@ -5,7 +5,23 @@
 {
     box-sizing: border-box;
 }
+/*
+*
+*      Sticky Menu
+*/
 
+
+.sticky
+{
+	width:100%;
+	top:0;
+	z-index:999;
+	
+}
+.sticky.smaller
+{
+	position:fixed;
+}
 body
 {
    

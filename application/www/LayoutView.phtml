@@ -53,12 +53,12 @@
           <ul class="center hide-on-med-and-down container">
             <li><a href="<?= $requestUrl ?>">HOME</a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1">ORDER BY CATEGORYS<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a href="#">ORDER NOW</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>
           <?php $userSession = new UserSession(); ?>
           <?php if($userSession->isAuthenticated()) : ?>
-              <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">LOG OUT</a>
+              <a href="<?= $requestUrl ?>/user/logout" class="red accent-4 right waves-effect waves-light btn-large">LOG OUT</a>
+               <a href="<?= $requestUrl ?>" class="indigo right waves-effect waves-light btn-large">ORDER NOW</a>
               <span class="name teal-text text-darken-3"><?= 'Hi '.$userSession->getFullName(); ?></span>
           <?php else : ?>
             <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">SIGN UP</a>
@@ -68,7 +68,6 @@
           <!-- Mobile Nav -->
           <ul id="mobile-demo" class="side-nav">
             <li><a href="<?= $requestUrl ?>">HOME</a></li>
-            <li><a href="#">ORDER NOW</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>
         </div>
@@ -141,7 +140,7 @@ $(document).ready(function(){
 $(function(){
 $(window).scroll(function(){
 var scroll = $(window).scrollTop();
-if (scroll >= 200){
+if (scroll >= 145){
 $(".sticky").addClass('smaller');
 } else { $(".sticky").removeClass("smaller");} 
 }); }); }); }); 

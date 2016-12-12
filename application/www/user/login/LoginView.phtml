@@ -1,13 +1,13 @@
 <section>
-    <?php if($showonfail==''): ?>
     <h3 class="center-align teal-text text-darken-3"><i class="fa fa-unlock-alt" aria-hidden="true"></i>
 Log In</h3>
+<h5 class="center-align red-text text-darken-4"><?= $errorMessage ?></h5>
     <form action="<?= $requestUrl ?>/user/login" method="POST">
         <fieldset>
             <p class="center-align">Authentication informations</p>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" class"validate" name="email" /> 
+                    <input id="email" type="email" class"validate" name="email" value="<?= $email ?>" /> 
                     <label for="email"  data-error="wrong" data-success="right">Email</label>
                 </div>
             </div>
@@ -24,11 +24,7 @@ Log In</h3>
             <a href="<?= $requestUrl ?>" class="center-align teal darken-3 btn waves-effect waves-light">Cancel</a>
         </div>
     </form>
-    <?php else : ?>
-    <div class="center-align red-text text-darken-4">
-            <h4><strong><i class="fa fa-thumbs-up" aria-hidden="true"></i>
-<?= $showonfail ?></strong></h4>
-    </div>
-    <?php endif; ?>
+    
+    
     
 </section>

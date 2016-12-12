@@ -4,7 +4,7 @@ class LoginController
 {
 	public function httpGetMethod()
 	{
-	    return ['showonfail' => ''];
+	    return ['_form' => new LoginForm() ];
 	}
 	
 	public function httpPostMethod(Http $http, array $formFields)
@@ -32,7 +32,11 @@ class LoginController
 		}
 		catch(Exception $e)
 		{
-		    return ['showonfail' => $e->getMessage()];
+		    $loginForm = new LoginForm();
+		    $loginForm->bind($formFields);
+		    $loginForm->setErrorMessage($e->getMessage());
+		    
+		    return ['_form' => $loginForm];
 		}
 	}
 	

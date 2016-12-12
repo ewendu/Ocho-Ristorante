@@ -70,7 +70,7 @@ class UserModel
         $userinfo = $database->queryOne($sql, [$email]);
         if(empty($userinfo) || $this->verifyPassword($password, $userinfo['Password']) == false)
         {
-           throw new Exception('Wrong password or email adress !');
+           throw new Exception('Wrong password or email address !');
         }
         return $userinfo;
         

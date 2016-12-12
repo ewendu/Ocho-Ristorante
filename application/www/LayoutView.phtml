@@ -56,10 +56,16 @@
             <li><a href="#">ORDER NOW</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>
-          
+          <?php $userSession = new UserSession(); ?>
+          <?php if($userSession->isAuthenticated()) : ?>
+              <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">LOG OUT</a>
+              <span class="name teal-text text-darken-3"><?= 'Hi '.$userSession->getFullName(); ?></span>
+          <?php else : ?>
+            <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">SIGN UP</a>
+            <a href="<?= $requestUrl ?>/user/login" class="teal darken-3 right waves-effect waves-light btn-large">LOG IN</a>
+            
+          <?php endif; ?>
           <!-- Mobile Nav -->
-          <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">SIGN UP</a>
-          <a href="<?= $requestUrl ?>/user/login" class="teal darken-3 right waves-effect waves-light btn-large">LOG IN</a>
           <ul id="mobile-demo" class="side-nav">
             <li><a href="<?= $requestUrl ?>">HOME</a></li>
             <li><a href="#">ORDER NOW</a></li>

@@ -10,7 +10,12 @@ body
 {
    
 }
-
+.name
+{
+    font-size: 1.3em;
+    margin-left: 5%;
+    text-decoration-style: solid!important;
+}
 .nav-wrapper li a
 {
     color :#b71c1c;

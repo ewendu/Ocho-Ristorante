@@ -1,6 +1,11 @@
 <!-- Message de notification -->
-
+<?php if($flashBag->hasMessages()):?>
+  <?php foreach($flashBag->fetchMessages() as $message): ?>
+    <h5 class="center-align blue-text"><?= $message ?></h5>
+  <?php endforeach; ?>
+<?php endif; ?>
 <!-- Code HTML à écrire -->
+
 <h4 class="center-align red-text text-darken-4"><i class="fa fa-sort-desc" aria-hidden="true"></i>
 Check out our Card ! <i class="fa fa-sort-desc" aria-hidden="true"></i>
 </h4>

@@ -12,7 +12,11 @@ class HomeController
     	 */
     	 $mealModel = new MealModel();
     	 $mealsresults = $mealModel->listAll();
-    	 $queryResults = array( 'meals' => $mealsresults);
+    	 $queryResults = array
+    	 ( 
+    	     'meals'    => $mealsresults,
+    	     'flashBag' => new FlashBag
+    	 );
     	 return $queryResults;
     	 
     

@@ -57,6 +57,8 @@ class UserModel
                                         $passwordHash
                                         ]
                                 );
+        $flashBag = new FlashBag();
+        $flashBag->add('Your account has been created');
     }
     
     // Method when the user want to log in 

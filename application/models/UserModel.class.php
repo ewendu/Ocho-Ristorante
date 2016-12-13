@@ -42,6 +42,8 @@ class UserModel
                 VALUES
                     (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW());
                     ';
+                    
+        $passwordHash = $this->hashPassword($password);
             $database = new Database();
             $database->executeSql($sql,[
                                         $firstName,
@@ -52,7 +54,7 @@ class UserModel
                                         $zipCode,
                                         $phone,
                                         $email,
-                                        $password
+                                        $passwordHash
                                         ]
                                 );
     }
@@ -78,9 +80,9 @@ class UserModel
     }
     
     
-    private function verifyPassword($password, $bddPassword)
+    private function verifyPassword($password, $hashPassword)
     {
-        return  $password == $bddPassword;
+        return  crypt($password, $hashPassword) == $hashPassword;
     }
     
     private function updateLoginTimestamp($userId)
@@ -94,6 +96,11 @@ class UserModel
         $database->executeSql($sql,[$userId]);
         
         
+    }
+    private function hashPassword($password)
+    {
+        $salt = '$2y$11$'.substr(bin2hex(openssl_random_pseudo_bytes(32)),0,22);
+        return crypt($password, $salt);
     }
         
         

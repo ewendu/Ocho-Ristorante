@@ -23,7 +23,6 @@ class UserController
         	        $formFields['phone'], 
         	        $formFields['mail'], 
         	        $formFields['password']);
-        	        
         	        $http->redirectTo('/');
     	}
     	catch (Exception $e)

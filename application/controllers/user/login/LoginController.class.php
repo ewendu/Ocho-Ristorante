@@ -27,7 +27,8 @@ class LoginController
             					$user['LastName'],
             					$user['Email']
             					);
-            				
+            
+            
             $http->redirectTo('/');
 		}
 		catch(Exception $e)

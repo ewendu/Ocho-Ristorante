@@ -72,6 +72,7 @@ class UserModel
         {
            throw new Exception('Wrong password or email address !');
         }
+        $this->updateLoginTimestamp($userinfo['Id']);
         return $userinfo;
         
     }
@@ -82,7 +83,18 @@ class UserModel
         return  $password == $bddPassword;
     }
     
-    
+    private function updateLoginTimestamp($userId)
+    {
+        $database = new Database();
+        $sql= '
+                    UPDATE User SET  
+                         LastLoginTimestamp = NOW()
+                    WHERE User.Id = ?
+                ';
+        $database->executeSql($sql,[$userId]);
+        
+        
+    }
         
         
 }

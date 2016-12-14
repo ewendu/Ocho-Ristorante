@@ -4,6 +4,21 @@
 // FONCTIONS                                                                           //
 /////////////////////////////////////////////////////////////////////////////////////////
 
+function runFormValidation()
+{
+    var $form;
+    
+    $form = $('form:not([data-no-validation=true])');
+    
+    if($form.length == 1)
+    {
+        var formValidator = new FormValidator($form);
+        formValidator.run();
+    }
+}
+
+
+
 
 
 
@@ -11,3 +26,9 @@
 // CODE PRINCIPAL                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////
 
+$(function()
+{
+    runFormValidation();
+  
+    
+});

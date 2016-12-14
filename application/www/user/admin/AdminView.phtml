@@ -1,0 +1,68 @@
+<section>
+    <h2 class="center-align indigo-text">
+        <i class="fa fa-cogs" aria-hidden="true"></i>
+        Administration
+    </h2>
+    
+    
+    <h4 class="center-align red-text text-darken-4">
+        <i class="fa fa-plus-square" aria-hidden="true"></i>
+
+        Add product
+    </h4>
+    <form action="<?= $requestUrl ?>/user/admin" method="POST">
+        <div class="row">
+                
+            <div class="input-field col s6">
+                <input id="productname" type="text" name="name"/>
+                <label for="productname">Product Name</label>
+            </div>
+            <div class="input-field col s6">
+                <select name="category">
+                    <option value="" disabled selected>Choose your category</option>
+                    <?php foreach($categorys as $category): ?>
+                      <option value="<?= $category['Id'] ?>"><?= $category['Name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+              <textarea name="description" id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="file-field input-field">
+              <div class="red darken-4 btn">
+                <span class="white-text">Picture</span>
+                <input type="file" name="picture">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s2 offset-s3">
+                <input id="productquantityinstock" type="text" name="quantity"/>
+                <label for="productquantityinstock">Quantity in stock</label>
+            </div>
+            <div class="input-field col s2">
+                <input id="productbuyprice" type="text" name="buyPrice"/>
+                <label for="productbuyprice">Buy Price</label>
+            </div>
+            <div class="input-field col s2">
+                <input id="productsaleprice" type="text" name="salePrice"/>
+                <label for="productsaleprice">Sell Price</label>
+            </div>
+            
+        </div>
+        <div class='row center-align'>
+            <button type="submit" class="indigo btn waves-effect waves-light">Save</button>
+            <a href="<?= $requestUrl ?>" class="red darken-4 btn waves-effect waves-light">Cancel</a>
+        </div>
+    </form>
+    
+</section>

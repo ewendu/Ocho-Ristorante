@@ -13,7 +13,13 @@ var FormValidator = function($form)
 
 FormValidator.prototype.run = function()
 {
-    this.$form.on('submit', this.onSubmitForm.bind(this));   
+    this.$form.on('submit', this.onSubmitForm.bind(this));
+    
+    
+    if($('#error').text > 0 )
+    {
+        $('#error').fadeIn('slow');
+    }
 };
 
 FormValidator.prototype.onSubmitForm = function(event)
@@ -31,7 +37,8 @@ FormValidator.prototype.onSubmitForm = function(event)
     this.checkRequiredFields();
     
 
-    this.$form.data('validation-error-count', this.totalErrors.length);
+    // this.$form.data('validation-error-count', this.totalErrors.length);
+    
     
     if(this.totalErrors.length > 0)
     {

@@ -3,14 +3,20 @@
  Create a new account </h3>
  
 <form action="<?= $requestUrl ?>/user" method="POST">
-    <p class="center-align">Identity and address :</p>
+    
+    <div id="error-message" class="hidden red-text center-align">
+    		<h5><i class="fa fa-warning"></i> There are <em id="total-error-count">x</em> error(s) in the form !</h5>
+    		
+    </div>
+    	<p id="error" class="red-text"><?= $errorMessage ?></p>
+    	<p class="center-align">Identity and address :</p>
     <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate" name="firstname" value="<?= $firstname ?>">
+          <input id="first_name" type="text" class="validate" name="firstname" value="<?= $firstname ?>" data-required data-name="First Name">
           <label for="first_name">First Name</label>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate" name="lastname" value="<?= $lastname ?>">
+          <input id="last_name" type="text" class="validate" name="lastname" value="<?= $lastname ?>" data-required data-name="Last Name">
           <label for="last_name">Last Name</label>
         </div>
       </div>
@@ -22,17 +28,17 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="address" type="text" class="validate" name="address" value="<?= $address ?>">
+          <input id="address" type="text" class="validate" name="address" value="<?= $address ?>" data-required data-name="Address">
           <label for="address">Address</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s4">
-          <input id="city" type="text" class="validate" name="city" value="<?= $city ?>">
+          <input id="city" type="text" class="validate" name="city" value="<?= $city ?>" data-required data-name="City">
           <label for="city">City</label>
         </div>
         <div class="input-field col s4">
-          <input id="zip" type="text" class="validate" name="zip" value="<?= $zip ?>">
+          <input id="zip" type="text" class="validate" name="zip" value="<?= $zip ?>" data-required data-name="Zip Code">
           <label for="zip">Zip Code</label>
         </div>
         <div class="input-field col s4">
@@ -46,19 +52,19 @@
       <p class="center-align">Authentification informations :</p>
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate" name="mail" value="<?= $mail ?>">
+          <input id="email" type="email" class="validate" name="mail" value="<?= $mail ?>" data-required data-name="Email">
           <label for="email">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" name="password">
+          <input id="password" type="password" name="password" data-required data-name="Password">
           <label for="password">Password</label>
         </div>
       </div>
       <div class="center-align">
-          <button  class="waves-effect waves-light btn" type="submit" value="Submit">Submit</button>
-          <a href="index" class="waves-effect waves-light btn">Cancel</a>
+          <button  class="teal darken-3 waves-effect waves-light btn" type="submit" value="Submit">Submit</button>
+          <a href="index" class="teal darken-3 waves-effect waves-light btn">Cancel</a>
       </div>
     
 </form>

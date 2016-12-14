@@ -40,5 +40,5 @@ OrderForm.prototype.onAjaxChangeMeal = function(meal)
     this.$mealDetails.find('.card-title').empty().append(meal.MealName)
     this.$mealDetails.find('.card-image img').empty().attr('src', src );
     this.$mealDetails.find('p').empty().append(meal.Description);
-    this.$mealDetails.find('a').empty().append(meal.SalePrice+',00 $');
+    this.$mealDetails.find('a').empty().append('Price : '+meal.SalePrice+',00 $');
 };

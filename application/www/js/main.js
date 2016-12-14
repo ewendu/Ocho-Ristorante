@@ -17,6 +17,13 @@ function runFormValidation()
     }
 }
 
+function runOrderForm()
+{
+    
+    var orderForm = new OrderForm();
+    orderForm.run();
+    
+}
 
 
 
@@ -28,7 +35,14 @@ function runFormValidation()
 
 $(function()
 {
+    // Exectution of form validation
     runFormValidation();
+    
+    // Execution of OrderForm only if OrderForm class is defined
+    if(typeof OrderForm != 'undefined')
+    {
+        runOrderForm();
+    }
   
     
 });

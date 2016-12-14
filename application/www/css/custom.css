@@ -18,6 +18,14 @@
 {
     border: none;
 }
+#meal-details img
+{
+    max-width: 50%;
+}
+#meal-details p
+{
+    border: none;
+}
 .sticky
 {
 	width:100%;

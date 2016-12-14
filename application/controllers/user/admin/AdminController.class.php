@@ -3,8 +3,13 @@
 class AdminController
 {
     
-    public function httpGetMethod()
+    public function httpGetMethod(Http $http)
     {
+        $userSession = new UserSession();
+        if($userSession->isAdmin() == false)
+        {
+            $http->redirectTo('/');
+        }
         $adminModel = new AdminModel();
         $categorysInfo  = $adminModel->getCategorysForForm();
         return ['categorys' => $categorysInfo];

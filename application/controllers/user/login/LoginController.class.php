@@ -25,13 +25,14 @@ class LoginController
             					$user['Id'], 
             					$user['FirstName'],
             					$user['LastName'],
-            					$user['Email']
+            					$user['Email'],
+            					$user['Admin']
             					);
             
             
             $http->redirectTo('/');
 		}
-		catch(Exception $e)
+		catch(DomainException $e)
 		{
 		    $loginForm = new LoginForm();
 		    $loginForm->bind($formFields);

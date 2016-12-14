@@ -74,7 +74,15 @@ class UserModel
         $userinfo = $database->queryOne($sql, [$email]);
         if(empty($userinfo) || $this->verifyPassword($password, $userinfo['Password']) == false)
         {
-           throw new Exception('Wrong password or email address !');
+           throw new DomainException('Wrong password or email address !');
+        }
+        if($this->isAdmin($userinfo['Id']))
+        {
+           $userinfo['Admin']=true;
+        }
+        else
+        {
+            $userinfo['Admin']=false;
         }
         $this->updateLoginTimestamp($userinfo['Id']);
         return $userinfo;
@@ -104,7 +112,24 @@ class UserModel
         $salt = '$2y$11$'.substr(bin2hex(openssl_random_pseudo_bytes(32)),0,22);
         return crypt($password, $salt);
     }
+    
+    private function isAdmin ($userId)
+    {
+        $database = new Database();
+        $sql =
+        '
+            SELECT Id
+            FROM Admin
+            WHERE User_Id = ?
         
+        ';
+        $userinfo = $database->queryOne($sql, [$userId]);
+        if (empty($userinfo) == true)
+        {
+            return false;
+        }
+        return true;
+    }
         
 }
 

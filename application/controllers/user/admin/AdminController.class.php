@@ -26,6 +26,8 @@ class AdminController
     	        $formFields['buyPrice'],
     	        $formFields['salePrice']
     	    );
+    	    
+    	    $http->redirectTo('/');
     	}
     	catch (DomainException $e)
     	{

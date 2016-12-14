@@ -24,6 +24,7 @@
 
     <!-- Librairies JavaScript de l'application -->
     <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+    <script src="<?= $wwwUrl ?>/js/classes/FormValidator.class.js"></script>
 </head>
 <body>
 
@@ -57,7 +58,7 @@
           </ul>
           <?php if($userSession->isAuthenticated()) : ?>
               <a href="<?= $requestUrl ?>/user/logout" class="red accent-4 right waves-effect waves-light btn-large">LOG OUT</a>
-               <a href="<?= $requestUrl ?>/order" class="indigo right waves-effect waves-light btn-large">ORDER NOW</a>
+              <a href="<?= $requestUrl ?>/order" class="indigo right waves-effect waves-light btn-large">ORDER NOW</a>
               <span class="name teal-text text-darken-3"><?= 'Hi '.$userSession->getFullName(); ?></span>
           <?php else : ?>
             <a href="<?= $requestUrl ?>/user" class="red accent-4 right waves-effect waves-light btn-large">SIGN UP</a>
@@ -91,7 +92,9 @@
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="red-text text-darken-4">Website in development ...</h5>
-                <p class="red-text text-darken-4"></p>
+                <?php if($userSession->isAdmin() == true): ?>
+                  <a class="indigo waves-effect waves-light btn-large" href="<?= $requestUrl ?>/user/admin">Admin</a>
+                <?php endif; ?>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="red-text text-darken-4">Follow us :</h5>
@@ -133,7 +136,8 @@
 <script type="text/javascript">
 $(document).ready(function(){
 $('.carousel').carousel();});
-$(".button-collapse").sideNav();	
+$(".button-collapse").sideNav();
+$('#textarea1').trigger('autoresize');
 jQuery(function($){
 $(document).ready(function(){
 $(function(){

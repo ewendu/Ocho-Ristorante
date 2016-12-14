@@ -1,19 +1,27 @@
 <section>
-    <h3 class="center-align teal-text text-darken-3"><i class="fa fa-unlock-alt" aria-hidden="true"></i>
-Log In</h3>
-<h5 class="center-align red-text text-darken-4"><?= $errorMessage ?></h5>
+    
+    <h3 class="center-align teal-text text-darken-3">
+        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+        Log In
+    </h3>
+
     <form action="<?= $requestUrl ?>/user/login" method="POST">
+        <div id="error-message" class="hidden red-text center-align">
+    		<h5><i class="fa fa-warning"></i> There are <em id="total-error-count">x</em> error(s) in the form !</h5>
+    		
+    	</div>
+    	<p id="error" class="red-text"><?= $errorMessage ?></p>
         <fieldset>
             <p class="center-align">Authentication informations</p>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" class"validate" name="email" value="<?= $email ?>" /> 
+                    <input id="email" type="email" class"validate" name="email" value="<?= $email ?>" data-required data-name="Email" /> 
                     <label for="email"  data-error="wrong" data-success="right">Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                  <input id="password" type="password"  name="password"/>
+                  <input id="password" type="password"  name="password" data-required data-name="Password" />
                   <label for="password">Password</label>
                 </div>
             </div>

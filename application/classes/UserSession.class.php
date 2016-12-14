@@ -12,7 +12,7 @@ class UserSession
         
     }
     
-    public function create($userId, $firstName, $lastName, $email)
+    public function create($userId, $firstName, $lastName, $email, $admin)
     {
         // User session construction 
        $_SESSION['user'] = 
@@ -20,7 +20,8 @@ class UserSession
            'UserId'    => $userId,
            'FirstName' => $firstName,
            'LastName'  => $lastName,
-           'Email'     => $email
+           'Email'     => $email,
+           'Admin'     => $admin
            
         ];
         
@@ -46,7 +47,14 @@ class UserSession
        }
        return false;
     }
-    
+    public function isAdmin()
+    {
+        if(!empty($_SESSION['user']) &&  $_SESSION['user']['Admin'] == true)
+        {
+            return true;
+        }
+        return false;
+    }
     public function getUserId()
     {
         if($this->isAuthenticated() == false)

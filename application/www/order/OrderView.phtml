@@ -14,7 +14,7 @@
             
                 <div class="input-field col s12">
                     <select id="meal" name="meal">
-                        <option value="" disabled selected>Choose you product</option>
+                        <option value="" disabled selected>Choose your product</option>
                       <?php foreach($meals as $meal): ?>
                           <option value="<?= $meal['Id'] ?>"><?= $meal['Name'] ?></option>
                       <?php endforeach; ?>
@@ -43,6 +43,7 @@
                       </div>
                     </div>
                 </div>
+                <input type="hidden" name="salePrice" value=""/>
                 
                 <div class="input-field col s6">
                     <input type="text" name="quantity" id="quantity"/>
@@ -50,31 +51,26 @@
                 </div>
             
             <div class="center-align">
-                <button type="button" class="indigo waves-effect waves-light btn">Add</button>
+                <button type="button" id="addtobasket" class="indigo waves-effect waves-light btn">Add</button>
             </div>
             </fieldset>
-            <fieldset>
+            <fieldset class ="hidden">
                  <h5 class="center-align indigo-text">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                  Your Order
                 </h5>
+                <section id="order-summary">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </section>
                 <!-- Add foreach here -->
-                <div class="row">
-                    <div class="col s4">
-                        
-                    </div>
-                    <div>
-                        
-                    </div>
-                    <div>
-                        
-                    </div>
-                    <div>
-                        
-                    </div>
-                    
-                    
-                </div>
+               
                 
                 
                 
@@ -86,6 +82,7 @@
             </div>
         </form>
 </section>
+<script src="<?= $wwwUrl ?>/js/classes/BasketSession.class.js"></script>
 <script src="<?= $wwwUrl ?>/js/classes/OrderForm.class.js"></script>
     
     

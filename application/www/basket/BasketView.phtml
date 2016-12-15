@@ -1,0 +1,40 @@
+      <table class="highlight centered responsive-table">
+          <?php if(empty($orderedMeals) == true): ?>
+              <tbody>
+                  <tr>
+                      <td>
+                          <strong>Your basket is empty !</strong>
+                      </td>
+                  </tr>
+              </tbody>
+              
+          <?php else: ?>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total Price</th>
+              <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <?php foreach( $orderedMeals as $meals): ?>
+                
+                  <tr>
+                    <td><?= $meals['Name'] ?></td>
+                    <td><?= $meals['Quantity'] ?></td>
+                    <td>$<?= $meals['Price'] ?>,00 </td>
+                    <td>$<?= intval($meals['Quantity'])*intval($meals['Price']) ?>,00 </td>
+                    <td>
+                        <button class="btn-floating btn waves-effect waves-light red darken-4"><i class="material-icons">delete</i></button> 
+                    </td>
+                  </tr>
+                  
+          <?php endforeach; ?>
+        </tbody>
+        <?php endif; ?>
+      </table>
+            
+

@@ -21,11 +21,7 @@
                     </select>
                 </div>
                 <!-- Meal details box start here -->
-                <!--<article id="meal-details" class="hidden">
-                    <img src="" alt="Product Picture">
-                    <p></p>
-                    <span>Price </span>
-                </article>-->
+                
                 <div class="row center-align">
                     <div class="col s12 m6 offset-m3">
                       <div class="card hidden center-align" id="meal-details">
@@ -43,7 +39,7 @@
                       </div>
                     </div>
                 </div>
-                <input type="hidden" name="salePrice" value=""/>
+                <input type="hidden" id="salePrice" name="salePrice" value=""/>
                 
                 <div class="input-field col s6">
                     <input type="text" name="quantity" id="quantity"/>
@@ -54,22 +50,22 @@
                 <button type="button" id="addtobasket" class="indigo waves-effect waves-light btn">Add</button>
             </div>
             </fieldset>
-            <fieldset class ="hidden">
+            <fieldset class="hidden" id="showonclick">
                  <h5 class="center-align indigo-text">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                 Your Order
+                 Your Basket
                 </h5>
                 <section id="order-summary">
                     
                     
-                    
+                    <!-- Load html basket page here -->
                     
                     
                     
                     
                     
                 </section>
-                <!-- Add foreach here -->
+                
                
                 
                 

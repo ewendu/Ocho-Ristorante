@@ -9,6 +9,10 @@
 {
     display: none;
 }
+main .dropdown-content  li span
+{
+    color:#b71c1c ;
+}
 /*
 *
 *      Sticky Menu
@@ -37,10 +41,7 @@
 {
 	position:fixed;
 }
-body
-{
-   
-}
+
 .name
 {
     font-size: 1.3em;
@@ -86,14 +87,7 @@ fieldset
     border-color: #1E593B;
     border-radius: 6px;
 }
-fieldset legend
-{
-    /* structure */
-    padding: 0 0.5em;
 
-    /* presentation */
-    font-weight: bold;
-}
 
 .limitsize
 {
@@ -192,12 +186,16 @@ main form p
 {
      color: #b71c1c;
 }
+.materialize-textarea label
+{
+    color: #b71c1c;
+}
 
-.input-field input[type=text]:focus + label , .input-field input[type=email]:focus + label, .input-field input[type=tel]:focus + label, .input-field input[type=password]:focus + label
+.input-field input[type=text]:focus + label , .input-field input[type=email]:focus + label, .input-field input[type=tel]:focus + label, .input-field input[type=password]:focus + label, .materialize-textarea:focus + label
 {
      color: #b71c1c;
 }
-.input-field input[type=text]:focus , .input-field input[type=email]:focus, .input-field input[type=tel]:focus,  .input-field input[type=password]:focus
+.input-field input[type=text]:focus , .input-field input[type=email]:focus, .input-field input[type=tel]:focus,  .input-field input[type=password]:focus, .materialize-textarea:focus
 {
     border-bottom: 1px solid #b71c1c;
     box-shadow: 0 1px 0 0 #b71c1c;

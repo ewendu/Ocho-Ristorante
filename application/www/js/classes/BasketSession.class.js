@@ -11,7 +11,7 @@ var BasketSession = function ()
 
 BasketSession.prototype.add = function(mealId, name, description, quantity, price) 
 {
-    
+    console.log('bask session');
     
     mealId   = parseInt(mealId);
     quantity = parseInt(quantity);

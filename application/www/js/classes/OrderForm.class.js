@@ -44,33 +44,43 @@ OrderForm.prototype.onAjaxChangeMeal = function(meal)
     this.$mealDetails.find('.card-image img').empty().attr('src', src );
     this.$mealDetails.find('p').empty().append(meal.Description);
     this.$mealDetails.find('a').empty().append('Price : '+meal.SalePrice+',00 $');
-    this.$form.find('input[name=salePrice]').val(meal.SalePrice);
+    $('#salePrice').val(meal.SalePrice);
 };
 
 
 OrderForm.prototype.onClickAddMeal = function() 
 {  
     // Hydration of basket session with the infos caught with  <select>
+
     this.basketSession.add(
                             
                             this.$meal.val(), // mealId
                             this.$mealDetails.find('.card-title').text(), // Name
                             this.$mealDetails.find('p').text(), // Description
                             this.$quantity.val(),  // Quantity
-                            this.$mealDetails.find('input[name=salePrice]').val() // Price
+                            $('#salePrice').val() // Price
                             ); 
-                            
+                   
     this.refreshOrderSummary();
     
 };
 
 OrderForm.prototype.refreshOrderSummary = function() 
 {
+    var formFields;
+    
+    formFields = {
+        basketItems : this.basketSession.items
+    };
+    
+    
     var url = getRequestUrl()+'/basket';
-    $.post(url, this.basketSession, this.onAjaxRefreshOrderSummary.bind(this));
+    $.post(url, formFields, this.onAjaxRefreshOrderSummary.bind(this));
 };
 
-OrderForm.prototype.onAjaxRefreshOrderSummary = function(data) 
+OrderForm.prototype.onAjaxRefreshOrderSummary = function(table) 
 {
-    
+    console.log(table);
+    $('#showonclick').fadeIn('slow');
+    $('#order-summary').empty().append(table);
 };

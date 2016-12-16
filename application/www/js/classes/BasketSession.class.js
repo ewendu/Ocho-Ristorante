@@ -4,7 +4,8 @@
 var BasketSession = function ()
 {
     
-     this.items = new Array();
+    this.items = new Array();
+    
     
     
 };
@@ -41,7 +42,7 @@ BasketSession.prototype.add = function(mealId, name, description, quantity, pric
 
 BasketSession.prototype.removeItem = function(mealId) 
 {
-    for(var i = 0; this.items.length; i++)
+    for(var i = 0; i < this.items.length; i++)
     {
         if(this.items[i].mealId == mealId)
         {

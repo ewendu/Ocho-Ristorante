@@ -10,12 +10,23 @@ var OrderForm = function ()
     this.basketSession = new BasketSession();
     
     
+    
 };
 
 OrderForm.prototype.run = function() 
 {
     // Event when the user change the <select>
     this.$meal.on('change', this.onChangeMeal.bind(this));
+    if(loadDataFromDomStorage('Basket') != null )
+    {
+        this.basketSession.items = loadDataFromDomStorage('Basket');
+        if(loadDataFromDomStorage('Basket') !='')
+        {
+            this.refreshOrderSummary();
+        }
+        
+    }
+    
     $('#addtobasket').on('click', this.onClickAddMeal.bind(this));
     $('#order-summary').on('click','button', this.onClickRemoveItem.bind(this));
 };
@@ -42,7 +53,7 @@ OrderForm.prototype.onAjaxChangeMeal = function(meal)
 {
     this.$mealDetails.fadeIn('slow');
     var src = getWwwUrl()+'/images/meals/'+meal.Photo;
-    this.$mealDetails.find('.card-title').empty().append(meal.MealName)
+    this.$mealDetails.find('.card-title').empty().append(meal.MealName);
     this.$mealDetails.find('.card-image img').empty().attr('src', src );
     this.$mealDetails.find('p').empty().append(meal.Description);
     this.$mealDetails.find('a').empty().append('Price : '+meal.SalePrice+',00 $');
@@ -62,7 +73,7 @@ OrderForm.prototype.onClickAddMeal = function()
                             this.$quantity.val(),  // Quantity
                             $('#salePrice').val() // Price
                             ); 
-    
+    saveDataToDomStorage('Basket', this.basketSession.items);
     this.refreshOrderSummary();
     
 };
@@ -92,7 +103,8 @@ OrderForm.prototype.onClickRemoveItem = function(event)
     var currentMealId = $(event.currentTarget).data('meal-id');
     //mealId = event.currentTarget.getAttribute('data-meal-id'); // JS  solution 1
     //mealId = event.currentTarget.dataset.meal-id;              // JS  solution 2
-    this.basketSession.removeItem(currentMealId)
+    this.basketSession.removeItem(currentMealId);
+    saveDataToDomStorage('Basket', this.basketSession.items);
     this.refreshOrderSummary();
     
 };

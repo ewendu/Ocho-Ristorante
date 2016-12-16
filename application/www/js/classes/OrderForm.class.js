@@ -9,6 +9,7 @@ var OrderForm = function ()
     this.$quantity     = $('#quantity');
     this.basketSession = new BasketSession();
     
+    
 };
 
 OrderForm.prototype.run = function() 
@@ -16,6 +17,7 @@ OrderForm.prototype.run = function()
     // Event when the user change the <select>
     this.$meal.on('change', this.onChangeMeal.bind(this));
     $('#addtobasket').on('click', this.onClickAddMeal.bind(this));
+    $('#order-summary').on('click','button', this.onClickRemoveItem.bind(this));
 };
 
 OrderForm.prototype.onChangeMeal = function(event) 
@@ -60,7 +62,7 @@ OrderForm.prototype.onClickAddMeal = function()
                             this.$quantity.val(),  // Quantity
                             $('#salePrice').val() // Price
                             ); 
-                   
+    
     this.refreshOrderSummary();
     
 };
@@ -80,7 +82,16 @@ OrderForm.prototype.refreshOrderSummary = function()
 
 OrderForm.prototype.onAjaxRefreshOrderSummary = function(table) 
 {
-    console.log(table);
     $('#showonclick').fadeIn('slow');
     $('#order-summary').empty().append(table);
+};
+
+OrderForm.prototype.onClickRemoveItem = function(event) 
+{
+    
+    var currentMealId = $(event.currentTarget).data('meal-id');
+    
+    this.basketSession.removeItem(currentMealId)
+    this.refreshOrderSummary();
+    
 };

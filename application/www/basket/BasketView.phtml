@@ -28,7 +28,7 @@
                     <td>$<?= $meals['Price'] ?>,00 </td>
                     <td>$<?= intval($meals['Quantity'])*intval($meals['Price']) ?>,00 </td>
                     <td>
-                        <button class="btn-floating btn waves-effect waves-light red darken-4"><i class="material-icons">delete</i></button> 
+                        <button data-meal-id="<?= $meals['mealId'] ?>" type="button" class="btn-floating btn waves-effect waves-light red darken-4"><i class="material-icons">delete</i></button> 
                     </td>
                   </tr>
                   

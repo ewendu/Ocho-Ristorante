@@ -38,3 +38,14 @@ BasketSession.prototype.add = function(mealId, name, description, quantity, pric
     
     
 };
+
+BasketSession.prototype.removeItem = function(mealId) 
+{
+    for(var i = 0; this.items.length; i++)
+    {
+        if(this.items[i].mealId == mealId)
+        {
+            this.items.splice(i,1);
+        }
+    }
+};

@@ -90,7 +90,8 @@ OrderForm.prototype.onClickRemoveItem = function(event)
 {
     
     var currentMealId = $(event.currentTarget).data('meal-id');
-    
+    //mealId = event.currentTarget.getAttribute('data-meal-id'); // JS  solution 1
+    //mealId = event.currentTarget.dataset.meal-id;              // JS  solution 2
     this.basketSession.removeItem(currentMealId)
     this.refreshOrderSummary();
     
